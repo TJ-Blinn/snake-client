@@ -29,6 +29,13 @@ const connect = function () {
     console.log("connected to server ----------");
     conn.write("Successfully connected to game server");
     conn.write("Name: TEJ");
+
+    setInterval(() => {
+      conn.write("Move: up");
+      // conn.write("Move: down");
+      // conn.write("Move: left");
+      // conn.write("Move: right");
+    }, 1000);
   });
 
   // Handling Data. receive this welcome greeting (data) and, for now, simply print it out to the screen
