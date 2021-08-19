@@ -3,16 +3,15 @@ client module handle a TCP connection
 */
 
 // * Establishes connection with the game server
+const { write } = require("fs");
 const net = require("net");
 //const { IP, PORT } = require("./play")
 
 /*  // ES6 object shorthand to export an object containing our connect function.
-
 // const host = "localhost";
 // const port = 50541;
 // const obj = { host, port };
 // const conn2 = net.createConnection(obj);
-
 */
 
 // Establishes connection with the game server
@@ -31,10 +30,10 @@ const connect = function () {
     conn.write("Name: TEJ");
 
     setInterval(() => {
-      conn.write("Move: up");
-      // conn.write("Move: down");
-      // conn.write("Move: left");
-      // conn.write("Move: right");
+      // const UPKEY = "Move: up";
+      // const LEFTKEY = "Move: left";
+      // const DOWNKEY = "Move: down";
+      // const RIGHTKEY = "Move: right";
     }, 1000);
   });
 
