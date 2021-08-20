@@ -8,30 +8,21 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-![🐍 Snek](/users/tjblinn/Documents/TJ HP laptop files/TJ Lighthouse Files/Daily Bootcamp Notes/FLEX/snake-client/snake_client_IMG.png "Screenshot of Snake Game")
+**🐍 Snek**
+
+![](https://raw.githubusercontent.com/TJ-Blinn/snake-client/main/docs/snake_client_IMG.png)
+
+<!-- <img src=docs/snake_client_IMG.png width=200>  -->
 
 ## Installation
 
-**Clone from repository**
+**Fork and Clone from repository**
 
-git clone https://github.com/lighthouse-labs/snek-multiplayer.git
-cd snek-multiplayer
-
-# install and run via npm
-
-npm install
-npm run play
-
-## Getting Started
-
-- Follow steps inside the snek server repo to run the server side
-- Run the development snake client using the `node play.js` command.
-- To play the game, the game client files can be found below:
-  1. client.js
-  2. constants.js
-  3. input.js
-  4. play.js
-  5. README.md
+1. Fork repository
+2. clone your fork of the repository
+3. In terminal 1, `cd` into `snek-multiplayer` and run `npm install`
+4. On a terminal 2, run the development snake client using the `node play.js` command.
+5. In Terminal 1 use `npm run play` to play the game
 
 ## Credit Where Credit Due
 

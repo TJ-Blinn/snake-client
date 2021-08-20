@@ -6,7 +6,7 @@ const { moveUp, moveDown, moveLeft, moveRight, bamText, ftwText } = require("./c
 // Stores the active TCP connection object. Used to write new messages to the server.
 let connection;
 
-const setupInput = function(conn) {
+const setupInput = function (conn) {
   connection = conn;
 
   const stdin = process.stdin;
@@ -14,50 +14,27 @@ const setupInput = function(conn) {
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
-  stdin.on("data", (key) => {
-    handleUserInput(key);
-  });
-  // stdin.on("data", handleUserInput);
+  stdin.on("data", handleUserInput);
 
   return stdin;
 };
 
-let cb;
-
-const handleUserInput = function(key) {
-  const interval = function(key) {
-    cb = setInterval(() => {
-      connection.write(key);
-    }, 500);
-  };
-
+const handleUserInput = function (key) {
   // * ctrl + c ====> EXIT application */
   if (key === "\u0003") {
     process.exit();
-  }
-  if (key === "w") {
-    clearInterval(cb);
-    interval(moveUp);
-  }
-  if (key === "s") {
-    clearInterval(cb);
-    interval(moveDown);
-  }
-  if (key === "a") {
-    clearInterval(cb);
-    interval(moveLeft);
-  }
-  if (key === "d") {
-    clearInterval(cb);
-    interval(moveRight);
-  }
-  if (key === "p") {
-    clearInterval(cb);
-    interval(bamText);
-  }
-  if (key === "o") {
-    clearInterval(cb);
-    interval(ftwText);
+  } else if (key === "w") {
+    connection.write(moveUp);
+  } else if (key === "s") {
+    connection.write(moveDown);
+  } else if (key === "a") {
+    connection.write(moveLeft);
+  } else if (key === "d") {
+    connection.write(moveRight);
+  } else if (key === "p") {
+    connection.write(bamText);
+  } else if (key === "o") {
+    connection.write(ftwText);
   }
 };
 
