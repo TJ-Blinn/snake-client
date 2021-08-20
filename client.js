@@ -5,20 +5,15 @@ client module handle a TCP connection
 // * Establishes connection with the game server
 const { write } = require("fs");
 const net = require("net");
-//const { IP, PORT } = require("./play")
+const { IP, PORT } = require("./constants");
 
-/*  // ES6 object shorthand to export an object containing our connect function.
-// const host = "localhost";
-// const port = 50541;
-// const obj = { host, port };
-// const conn2 = net.createConnection(obj);
-*/
+// ES6 object shorthand to export an object containing our connect function.
 
 // Establishes connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: "localhost",
-    port: 50541,
+    host: IP,
+    port: PORT,
   });
   // interpret incoming data as text
   conn.setEncoding("utf8");
@@ -29,12 +24,7 @@ const connect = function () {
     conn.write("Successfully connected to game server");
     conn.write("Name: TEJ");
 
-    setInterval(() => {
-      // const UPKEY = "Move: up";
-      // const LEFTKEY = "Move: left";
-      // const DOWNKEY = "Move: down";
-      // const RIGHTKEY = "Move: right";
-    }, 1000);
+    setInterval(() => {}, 1000);
   });
 
   // Handling Data. receive this welcome greeting (data) and, for now, simply print it out to the screen

@@ -2,6 +2,7 @@
 input module which will solely focus on managing the user input
 * Setup User Interface so that we can handle user input via stdin
 */
+// const { UPKEY } = require("./constants");
 
 // Stores the active TCP connection object. Used to write new messages to the server.
 let connection;
