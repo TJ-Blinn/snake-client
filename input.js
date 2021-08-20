@@ -9,10 +9,10 @@ let connection;
 // * ctrl + c ====> EXIT application */
 const handleUserInput = function (key) {
   //console.log("key is -----------", key);
-
   if (key === "\u0003") {
     process.exit();
   }
+
   if (key === "w") {
     connection.write("Move: up");
   }
@@ -24,6 +24,10 @@ const handleUserInput = function (key) {
   }
   if (key === "d") {
     connection.write("Move: right");
+  }
+  // The Say Message "P" for BAM
+  if (key === "p") {
+    connection.write("Say: BAM");
   }
 };
 
