@@ -1,14 +1,21 @@
-// Establishes connection with the game server. Removed from connect function
+// Establishes connection with the game server.
 const IP = "10.0.2.15";
 const PORT = 50541;
 
-// const UPKEY = "Move: up";
-// const LEFTKEY = "Move: left";
-// const DOWNKEY = "Move: down";
-// const RIGHTKEY = "Move: right";
+const moveUp = "Move: up";
+const moveDown = "Move: down";
+const moveLeft = "Move: left";
+const moveRight = "Move: right";
+const bamText = "BAM";
+const ftwText = "For the Win!";
 
 module.exports = {
   IP,
   PORT,
-  // UPKEY,
+  moveUp,
+  moveDown,
+  moveLeft,
+  moveRight,
+  bamText,
+  ftwText,
 };
